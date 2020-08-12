@@ -1,0 +1,19 @@
+<h1>Posts</h1>
+
+<table>
+<tr>
+    <th>Title</th><th>Content</th><th>Action</th>
+</tr>
+<% @posts.each do |post| %>
+    <tr>
+        <td><%= post.title%></td>
+        <td><%= post.content%></td>
+        <td><a href="<%= post_path(post.id)%>" class="btn btn-primary">View</a></td>
+        <td><a href="<%= edit_post_path(post.id)%>" class="btn btn-primary">Edit</a></td> 
+        <td><a href="<%= post_path(post.id)%>" class="btn btn-danger" data-confirm="Are you sure!!!" data-method="DELETE">Delete</a></td> 
+    </tr>
+<% end %>
+</table>
+<p>
+    <a href="<%= new_post_path%>" class="btn btn-success">Create</a>
+</p>

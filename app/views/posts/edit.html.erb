@@ -1,0 +1,16 @@
+<h1>Edit Post </h1>
+
+<%= form_for @post do |f| %>
+    <div class="form_group">
+        <label>Title</label>
+        <%= f.text_field :title, class:'form-control' %>
+    </div>
+    <div class="form_group">
+        <label>Content</label>
+        <%= f.text_area :content, class:'form-control' %>
+    </div>
+    <div class="form_group">
+        <button type="submit" action="<%= post_path(@post.id)%>" class="btn btn-primary">Update</button>
+        <a href="<%= posts_path%>" class="btn btn-primary">Posts</a>
+    </div>
+<% end %>

@@ -1,0 +1,19 @@
+<h1>Categories</h1>
+
+<table>
+<tr>
+    <th>Title</th><th>Content</th><th>Action</th>
+</tr>
+<% @categories.each do |category| %>
+    <tr>
+        <td><%= category.name%></td>
+        <td><%= category.slug%></td>
+        <td><a href="<%= category_path(category.id)%>" class="btn btn-primary">View</a></td>
+        <td><a href="<%= edit_category_path(category.id)%>" class="btn btn-primary">Edit</a></td> 
+        <td><a href="<%= category_path(category.id)%>" class="btn btn-danger" data-confirm="Are you sure!!!" data-method="DELETE">Delete</a></td> 
+    </tr>
+<% end %>
+</table>
+<p>
+    <a href="<%= new_category_path%>" class="btn btn-success">Create</a>
+</p>
